@@ -1,5 +1,3 @@
-import org.apache.tools.ant.util.JavaEnvUtils.VERSION_1_8
-
 plugins {
     id("com.android.application")
 }
@@ -11,7 +9,7 @@ android {
     defaultConfig {
         applicationId = "com.example.minimalistserver"
         minSdk = 24
-        targetSdk = 30
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

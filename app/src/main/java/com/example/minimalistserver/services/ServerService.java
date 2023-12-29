@@ -19,7 +19,6 @@ import com.example.minimalistserver.utils.NotificationHelper;
 public class ServerService extends Service {
     private ControllerHandler controllerHandler;
 
-    private MainActivity mainActivity;
 
     private static final int NOTIFICATION_ID = 1;
 
@@ -36,7 +35,7 @@ public class ServerService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (!controllerHandler.isServerActive()) {
             Intent notificationIntent = new Intent(this, MainActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE);
 
             Notification notification = new NotificationCompat.Builder(this, NotificationHelper.CHANNEL_ID)
                     .setContentTitle("Server Service")
